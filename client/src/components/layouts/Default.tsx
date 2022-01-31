@@ -5,14 +5,23 @@ import {
     AccordionIcon,
     AccordionItem,
     AccordionPanel,
+    Avatar,
     Badge,
     Box,
+    Button,
     Circle,
     Code,
     Flex,
     Grid,
     GridItem,
     HStack,
+    Popover,
+    PopoverArrow,
+    PopoverBody,
+    PopoverCloseButton,
+    PopoverContent,
+    PopoverHeader,
+    PopoverTrigger,
     Spacer,
     StatDownArrow,
     StatUpArrow,
@@ -21,10 +30,12 @@ import {
 } from '@chakra-ui/react'
 import NavHeader from '../NavHeader'
 import bg from '../../assets/bg.png'
+import mus from '../../assets/mus.png'
 import {
     BsArrowDownCircle,
     BsCamera,
     BsCameraVideo,
+    BsCircleFill,
     BsMic,
     BsPhone,
     BsRecord,
@@ -76,11 +87,33 @@ const DefaultLayout = ({ children }: LayoutProps) => (
 
                                 <AccordionPanel textAlign={'center'} pb={4} borderWidth={'0px'}>
                                     Hi! Welcome to Mila.Health, a project spinning out of Imperial
-                                    College London <br />
+                                    College London. <br />
                                     <br />
                                     This is a projected 2041 AI Healthcare System for All. We
                                     leverage Federated Learning and Big Data to develop a life
                                     saving system where everyone owns their own data.
+                                    <br /> <br />
+                                    <Popover placement="left">
+                                        <PopoverTrigger>
+                                            <Button>
+                                                <Badge colorScheme={'blue'}>The Team</Badge>
+                                            </Button>
+                                        </PopoverTrigger>
+                                        <PopoverContent bgColor={'whiteAlpha.300'}>
+                                            <PopoverArrow />
+                                            <PopoverCloseButton />
+                                            {/* <PopoverHeader>{namestate}</PopoverHeader> */}
+                                            <PopoverBody>
+                                                <HStack p={5}>
+                                                    <Avatar src={mus}></Avatar>
+                                                    <Avatar src={mus}></Avatar>{' '}
+                                                    <Avatar src={mus}></Avatar>{' '}
+                                                    <Avatar src={mus}></Avatar>{' '}
+                                                    <Avatar src={mus}></Avatar>
+                                                </HStack>
+                                            </PopoverBody>
+                                        </PopoverContent>
+                                    </Popover>
                                 </AccordionPanel>
                             </AccordionItem>
                         </Accordion>
@@ -168,8 +201,10 @@ const DefaultLayout = ({ children }: LayoutProps) => (
                                 <BsMic color="red.200" size={'20px'} />
                                 {/* <Caemra color="red.200" size={'20px'} /> */}
                             </Flex>
-
-                            <Box paddingLeft={'15vw'} paddingBottom={'2vw'}>
+                            <Box paddingLeft={'15vw'} paddingTop={'30vw'}>
+                                <BsCircleFill size={'30px'} color="limegreen" />
+                            </Box>
+                            <Box paddingLeft={'15vw'} paddingBottom={'2vw'} position={'absolute'}>
                                 <Blob width={'20vw'} />
                             </Box>
                         </Flex>
